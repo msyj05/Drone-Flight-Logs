@@ -288,7 +288,6 @@ a.btn:hover {
         margin-right: 0;
         content: attr(data-label);
         letter-spacing: 0.01em;
-        vertical-align: top;
         word-break: break-word;
     }
     .no-logs {
