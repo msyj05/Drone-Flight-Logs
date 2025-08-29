@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Drone Flight Logs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <img src="/images/drone-logo1.jpg" alt="Drone Logo" class="drone-logo" />
+                Drone Flight Logs
+            </h1>
+            <p class="subtitle">Record and track your drone flight details</p>
+        </header>
+        <nav>
+                <a href="index.html" class="nav-link">←Back to Log Entry</a>
+        </nav>
+        <div class="logs-container">
+            <h2 class="logs-title">Saved Flight Logs</h2>
+            <div id="logsTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pilot</th>
+                            <th>Date</th>
+                            <th>Reporting Time/Location</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Battery</th>
+                            <th>Temperature</th>
+                            <th>Leaving Time</th>
+                            <th>Drone SN</th>
+                            <th>Battery SN</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logsBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="logs.js"></script>
+</body>
+</html>

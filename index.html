@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Flight Logs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <img src="/images/drone-logo1.jpg" alt="Drone Logo" class="drone-logo" />
+                Drone Flight Log
+            </h1>
+            <p class="subtitle">Record and track your drone flight details</p>
+        </header>
+        
+        <div class="form-container">
+            <form id="logForm">
+                <div class="form-row">
+                    <div class="form-group pilot-name">
+                        <label for="pilotName" class="required">Pilot Name</label>
+                        <input type="text" id="pilotName" placeholder="Enter pilot's name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date" class="required">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location" class="required">Location</label>
+                        <input type="text" id="location" placeholder="Enter flight location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportingTime" class="required">Reporting Time</label>
+                        <input type="time" id="reportingTime" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startTime" class="required">Start Time (Flight)</label>
+                        <input type="time" id="startTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="batteryCycleCount" class="required">Battery Cycle Count</label>
+                        <input type="number" id="batteryCycleCount" min="0" placeholder="Enter battery cycle count" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="initialBatteryVoltage" class="required">Initial Battery Voltage (V)</label>
+                        <input type="number" id="initialBatteryVoltage" step="0.1" placeholder="Enter initial battery voltage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="initialBattery" class="required">Initial Battery Percentage (%)</label>
+                        <input type="number" id="initialBattery" min="0" max="100" placeholder="Enter initial battery percentage" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="initialTemperature" class="required">Initial Temperature (°C)</label>
+                        <input type="number" id="initialTemperature" placeholder="Enter initial temperature" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="finalBatteryVoltage" class="required">Final Battery Voltage (V)</label>
+                        <input type="number" id="finalBatteryVoltage" step="0.1" placeholder="Enter final battery voltage" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="finalBattery" class="required">Final Battery Percentage (%)</label>
+                        <input type="number" id="finalBattery" min="0" max="100" placeholder="Enter final battery percentage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="finalTemperature" class="required">Final Temperature (°C)</label>
+                        <input type="number" id="finalTemperature" placeholder="Enter final temperature" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="droneSerial" class="required">Drone Serial Number</label>
+                        <input type="text" id="droneSerial" placeholder="Enter drone serial number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="batterySerial" class="required">Battery Serial Number</label>
+                        <input type="text" id="batterySerial" placeholder="Enter battery serial number" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="endTime" class="required">End Time (Flight)</label>
+                        <input type="time" id="endTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leavingTime" class="required">Leaving Time</label>
+                        <input type="time" id="leavingTime" required>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button type="submit" class="btn">Save Log Entry</button>
+                    <button type="reset" class="btn btn-reset">Reset Form</button>
+                    <a href="logs.html" class="btn saved" target="_self">View Saved Logs</a>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
