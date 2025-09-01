@@ -227,78 +227,258 @@ a.btn:hover {
     text-decoration: underline;
 }
 
-/* Responsive table for logs.html */
+/* Base mobile-first responsive design */
 @media (max-width: 900px) {
-    .logs-container {
-        padding: 4vw 2vw;
+    body {
+        padding: 10px;
     }
-    table, thead, tbody, th, td, tr {
-        display: block;
+
+    .container {
         width: 100%;
-    }
-    thead {
-        display: none;
-    }
-    tbody tr {
-        background: #f8fafc;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px rgba(44,62,80,0.13), 0 1.5px 0 #3498db inset;
-        margin-bottom: 22px;
-        padding: 18px 5vw 14px 5vw;
-        position: relative;
-        border: 2px solid #3498db;
-        width: 96vw;
-        max-width: 100%;
-        min-width: 0;
-        transition: box-shadow 0.2s, border 0.2s;
-    }
-    tbody tr:hover {
-        box-shadow: 0 8px 32px rgba(44,62,80,0.18), 0 1.5px 0 #217dbb inset;
-        border-color: #217dbb;
-    }
-    tbody tr {
-        display: block;
-    }
-    td {
-        border: none;
-        position: relative;
-        padding: 10px 0 10px 0;
-        min-height: 28px;
-        margin-bottom: 8px;
-        box-sizing: border-box;
-        font-size: 1.04em;
-        color: #222;
-        background: none;
-        width: 100%;
-        word-break: break-word;
-        max-width: 100%;
-        display: block;
-    }
-    td:not(:last-child) {
-        border-bottom: 1px solid #e3eaf3;
-    }
-    td:before {
-        display: block;
-        font-weight: 700;
-        color: #3498db;
-        font-size: 1em;
-        min-width: 0;
-        width: auto;
-        margin-bottom: 2px;
-        margin-right: 0;
-        content: attr(data-label);
-        letter-spacing: 0.01em;
-        word-break: break-word;
-    }
-    .no-logs {
-        padding: 18px 0;
-        background: #fff;
+        padding: 0;
+        margin: 0;
         border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(44,62,80,0.06);
-        color: #888;
-        font-size: 1.1em;
+    }
+
+    header {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .drone-logo {
+        height: 35px;
+        width: 35px;
+    }
+
+    /* Form Styling */
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+
+    input, select {
+        padding: 12px;
+        font-size: 16px; /* Prevent iOS zoom */
+        height: 44px; /* Better touch target */
+    }
+
+    .btn-container {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin: 0;
+        height: 44px;
+    }
+
+    /* Logs Page Styling */
+    .logs-container {
+        padding: 15px;
+    }
+
+    .logs-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        margin: 10px 15px;
+        padding: 8px 0;
+    }
+
+
+
+    /* Search Form */
+    .search-form {
+        margin: 15px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .search-bar {
+        flex: 1;
+        height: 44px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+
+    /* Fix for notch devices */
+    @supports (padding: env(safe-area-inset-top)) {
+        body {
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) 
+                    env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
+    }
+
+     /* Hide desktop table structure */
+    #logsTable table,
+    #logsTable thead,
+    #logsTable th {
+        display: none !important;
+    }
+
+    /* Show mobile card layout */
+    #logsBody {
+        display: block !important;
+    }
+
+    /* Mobile log row styling */
+    .mobile-log-card {
+        display: block;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid #e1e8ed;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    /* Log summary section */
+    .log-summary {
+        display: block !important;
+        padding: 15px;
+        border-bottom: 1px solid #e1e8ed;
+        background: #f8fafc;
+    }
+
+    .summary-info {
+        margin-bottom: 10px;
+    }
+
+    .pilot-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 5px;
+    }
+
+    .log-date, .log-location {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 3px;
+    }
+
+    .view-info-btn {
+        width: 100%;
+        padding: 10px;
+        height: 44px;
+        font-size: 16px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .view-info-btn:hover {
+        background: #2980b9;
+    }
+
+    .view-info-btn.active {
+        background: #27ae60;
+    }
+
+    /* Details grid - initially hidden */
+    .details-grid {
+        display: none !important;
+        padding: 15px;
+        background: #ffffff;
+    }
+
+    .details-grid > div {
+        padding: 12px;
+        background: #f8fafc;
+        border-radius: 6px;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        border-left: 3px solid #3498db;
+    }
+
+    .details-grid strong {
+        color: #2c3e50;
+    }
+
+    /* Show details when expanded */
+    .mobile-log-card.expanded .details-grid {
+        display: block !important;
+    }
+    }
+
+
+    /* Ensure no-logs message shows properly */
+    .no-logs {
+        display: block !important;
         text-align: center;
-        width: 96vw;
-        margin: 0 auto;
+        padding: 30px 15px;
+        color: #7f8c8d;
+        font-style: italic;
+        background: #f8fafc;
+        border-radius: 10px;
+        margin: 15px;
+    }
+
+
+
+
+/* Extra small devices */
+@media (max-width: 380px) {
+    .container {
+        border-radius: 0;
+    }
+
+    header {
+        padding: 10px 5px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .form-container,
+    .logs-container {
+        padding: 10px;
+    }
+
+    .drone-logo {
+        height: 30px;
+        width: 30px;
+    }
+
+    input, select, button {
+        font-size: 15px;
+    }
+
+    .details-grid > div {
+        font-size: 0.85rem;
     }
 }
